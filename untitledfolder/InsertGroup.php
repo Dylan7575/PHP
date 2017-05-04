@@ -1,12 +1,8 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 $data = json_decode(file_get_contents("php://input"));
-
-$CourseID= $data[1];
-$Semester=$data[0];
-$AdminID=$data[2];
 $con =mysqli_connect("localhost","root","","test") or die(json_encode("fail"));
-$sql="Insert Into Course(CourseID,Semester,AdminID) Values('$CourseID','$Semester','$AdminID')";
+$sql="Insert Into Groups(CourseID,Groups) Values('$data[1]','$data[0]')";
 if(mysqli_query($con ,$sql)){
 
     //echo json_encode( "yea");

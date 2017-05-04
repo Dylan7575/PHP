@@ -15,7 +15,7 @@ if($query =mysqli_query($con ,$sql)){
 else{
     echo json_encode("NO");
 }
-$sql = "Select StudentID From Students Where Groups = 'pandas' and CourseID = '486'";
+$sql = "Select StudentID From Students Where Groups = 'PeerEvolve' and CourseID = '486'";
 $i=0;
 if($query =mysqli_query($con ,$sql)){
     while($row = $query->fetch_assoc()){

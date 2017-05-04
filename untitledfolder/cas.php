@@ -24,6 +24,7 @@ phpCAS::setNoCasServerValidation();
 // force CAS authentication
 phpCAS::forceAuthentication();
 session_start();
+
 if(phpCAS::checkAuthentication()==1){
     $_SESSION['auth']="true";
 }
@@ -32,6 +33,6 @@ else{
 }
 
 $_SESSION['name']=phpCAS::getUser();
-
+session_name($_SESSION['name']);
 ?>
 

@@ -10,7 +10,6 @@ if($query =mysqli_query($con ,$sql)){
     while($row = $query->fetch_row()){
         $array[$i]=  $row[0];
         $i=$i+1;
-
     }
     //echo $array[0];
 
@@ -38,7 +37,7 @@ $search = implode(',',$array);
 //echo $search;
 
 
-$sql= "Select CourseID,EvalID,OpenDate,DueDate,CloseDate FROM ActiveEvaluations WHERE CourseID IN($search) AND (OpenDate>=CURRENT_DATE) AND  (CloseDate >= CURRENT_DATE ) and EvalID Not in ($not)";
+$sql= "Select CourseID,EvalID,OpenDate,DueDate,CloseDate FROM ActiveEvaluations ";
 if($query =mysqli_query($con ,$sql)){
     $array=array();
     while($row = $query->fetch_assoc()){
